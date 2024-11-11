@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar parejas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
-    
+    <main>
+        
+        <h1>Buscar parejas - Eloy Garcia Martinez</h1>
+    <section class="juego">
 
+
+    <div>
+        <p id="numeroIntentos"></p>
+        <p id="parejasRestantes"></p>
+    </div>
+
+    <div id="tablero">
+    </div>
+
+    <div id="opciones">
+        <form>
+        <h2>Dificultad:</h2>
+        <input type="radio" name="dificultad" value="facil" checked> Fácil
+        <input type="radio" name="dificultad" value="medio"> Medio
+        <input type="radio" name="dificultad" value="dificil"> Difícil
+        <input type="radio" name="dificultad" value="personalizado"> Personalizado
+        <br>
+        <label for="filas">Filas:</label>
+        <input type="number" id="filas" name="filas" value="4" min="2">
+        <label for="columnas">Columnas:</label>
+        <input type="number" id="columnas" name="columnas" value="4" min="2">
+        <br>
+        <input type="submit" value="Seleccionar dificultad">
+        </form>
+    </div>
+    </section>
+    </main>
     <script src="scripts/buscarParejas.js"></script>
 </body>
 </html>

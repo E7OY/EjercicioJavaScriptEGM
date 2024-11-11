@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+ 
+.juego {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
