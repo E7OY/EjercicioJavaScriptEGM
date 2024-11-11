@@ -9,9 +9,18 @@ main {
 h1 {
     text-align: center;
 }
- 
+
 .juego {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+#informacion {
+    font-weight: bold;
+}
+
+#opciones {
+    align-items: center;
+    display: flex;
 }
