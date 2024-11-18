@@ -88,6 +88,17 @@ section {
     border-radius: 20px;
 }
 
+.casilla {
+    color: white;
+    background: #000;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+
+
+
 @media only screen and (max-width: 422px) {
     * {
         font-size: 12px;
