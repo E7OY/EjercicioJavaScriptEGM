@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: "PressStart2P";
 }
 
 body {
     background: #000;
-    font-family: ;
     margin-top: 100px;
 }
 
@@ -37,4 +37,14 @@ section .informacion {
     align-items: center;
     font-size: 12px;
     text-align: center;
+}
+
+
+
+
+
+
+@font-face {
+    font-family: PressStart2P;
+    src: url(../fonts/PressStart2P-Regular.ttf);
 }
