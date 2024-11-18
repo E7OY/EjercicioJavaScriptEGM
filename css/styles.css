@@ -99,6 +99,18 @@ section {
     main {
         flex-direction: column;
     }
+    section {
+        margin: 10px 10px;
+    }
+    .juego {
+        order: 1;
+    }
+    .informacion {
+        order: 2;
+    }
+    .dificultad {
+        order: 3;
+    }
 }
 
 
