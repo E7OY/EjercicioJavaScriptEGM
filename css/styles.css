@@ -54,6 +54,19 @@ section {
     cursor: pointer;
     animation: animacionBorde 2s infinite;
 }
+@keyframes animacionBorde {
+    0% {
+        border: 2px dashed white;
+    }
+    50% {
+        border: 3px dashed white;
+    }
+    100% {
+        border: 2px solid dashed white;
+    }
+}
+
+
 #mensaje_resultado {
     color: white;
     background: #000;
