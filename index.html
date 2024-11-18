@@ -8,38 +8,49 @@
 </head>
 <body>
 
+    <h1>Buscar parejas - Eloy Garcia Martinez</h1>
     <main>
         
-        <h1>Buscar parejas - Eloy Garcia Martinez</h1>
-    <section class="juego">
+        <section class="seccion1">
+            <h2 id="intentos" class="estadisticas">Numero intentos: <span id="contador-intentos">0</span></h2>
+            <h2 id="aciertos" class="estadisticas">Parejas restantes: <span id="contador-aciertos">6</span></h2>
+        </section>
 
+        <section class="seccion2">
+            <table id="tablero">
+            </table>
+            <p id="mensaje-resultado" style="display: none;"></p>
+        </section>
 
-    <div id="informacion">
-        <p id="numeroIntentos">Numero de intentos: </p>
-        <p id="parejasRestantes">Parejas restantes: </p>
-    </div>
+        <section class="dificultad">
+            <h3>Sleccionar Dificultad</h3>
+            <form id="form-dificultad">
+                <label for="facil">
+                    <input type="radio" name="dificultad" value="facil" checked>Fácil
+                </label>
+                <label for="medio">
+                    <input type="radio" name="dificultad" value="medio">Medio
+                </label>
+                <label for="dificil">
+                    <input type="radio" name="dificultad" value="dificil">Dificil
+                </label>
+                <label for="personalizado">
+                    <input type="radio" name="dificultad", value="personalizado">Personalizado
+                </label>
 
-    <div id="tablero">
-        <p>dfdf</p>
-    </div>
+                <div id="personalizado" style="display: none;">
+                    <label for="filas">
+                        Filas: <input type="number" id="filas" min="1">
+                    </label>
+                    <label for="columnas">
+                        Columnas: <input type="number" id="columnas" min="1">
+                    </label>
+                </div>
+                <button type="button" id="seleccionar-dificultad">Seleccionar dificultad</button>
+            </form>
+            <div id="mensaje-error" style="display: none; color: red; margin-top: 20px;">El número de casillas debe ser par.</div>
+        </section>
 
-    <div id="opciones">
-        <form>
-        <h2>Dificultad:</h2>
-        <input type="radio" name="dificultad" value="facil" checked> Fácil </br>
-        <input type="radio" name="dificultad" value="medio"> Medio </br>
-        <input type="radio" name="dificultad" value="dificil"> Difícil </br>
-        <input type="radio" name="dificultad" value="personalizado"> Personalizado
-        <br>
-        <label for="filas">Filas:</label>
-        <input type="number" id="filas" name="filas" value="4" min="2">
-        <label for="columnas">Columnas:</label>
-        <input type="number" id="columnas" name="columnas" value="4" min="2">
-        <br>
-        <input type="submit" value="Seleccionar dificultad">
-        </form>
-    </div>
-    </section>
     </main>
     <script src="scripts/buscarParejas.js"></script>
 </body>
