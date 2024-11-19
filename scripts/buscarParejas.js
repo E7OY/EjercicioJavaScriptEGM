@@ -42,5 +42,12 @@ function iniciarJuego() {
     mostrarIntentos.innerHTML = `Numero de intentos: ${intentos}`;
     mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
 
+    resetarTarjetas();
 }
 
+function resetarTarjetas(){
+    let tarjetas = document.querySelectorAll('.tarjeta');
+    tarjetas.forEach(tarjeta => {
+        tarjeta.innerHTML = '';
+    });
+}
