@@ -11,6 +11,12 @@ let mensajeError = document.getElementById('mensaje_error');
 let filas = 3;
 let columnas = 4;
 let intentos = 0;
+let tarjetasDestapadas = 0;
+let tarjeta1 = null;
+let primerNumeroDestapado = null;
+let tarjeta2 = null;
+let segundoNumeroDestapado = null;
+
 
 function generarTablero() {
     tablero.innerHTML = '';
@@ -49,5 +55,30 @@ function resetarTarjetas(){
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
         tarjeta.innerHTML = '';
+        tarjeta.disabled = false;
     });
+}
+
+function destapar(id) {
+    tarjetasDestapadas++;
+
+    if(tarjetasDestapadas == 1){
+        tarjeta1 = document.getElementById(id);
+        primerNumeroDestapado = numeros[id];
+        tarjeta1.innerHTML = primerNumeroDestapado;
+        tarjeta1.disabled = true;
+    } else if(tarjetasDestapadas == 2) {
+        tarjeta2 = document.getElementById(id);
+        segundoNumeroDestapado = numeros[id];
+        tarjeta2.innerHTML = segundoNumeroDestapado;
+        tarjeta2.disabled = true;
+
+        intentos++;
+        mostrarIntentos.innerHTML = `Intentos: ${intentos}`;
+
+
+        if(primerNumeroDestapado == segundoNumeroDestapado)
+
+    }
+
 }
