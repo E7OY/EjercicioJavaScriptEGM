@@ -99,6 +99,7 @@ function destapar(id) {
             //comprobaciones si los numeros destapados son distintos:
         } else {
             mensajeResultado.innerHTML = `Los números destapados son distintos.`;
+            mensajeResultado.style.display = 'block';
             setTimeout(() =>{
                 tarjetasDestapadas = 0;
                 tarjeta1.innerHTML = '';
@@ -145,9 +146,9 @@ seleccionarDificultad.addEventListener('click', () => {
 formDificultad.dificultad.forEach(radio => {
     radio.addEventListener('change', () => {
         if(radio.value === 'personalizado') {
-            personalizadoBoton.style.display = 'block';
+            document.getElementById('personalizado').style.display = 'block';
         } else {
-            personalizadoBoton.style.display = 'none';
+            document.getElementById('personalizado').style.display = 'none';
         }
     });
 });
