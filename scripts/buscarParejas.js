@@ -56,7 +56,7 @@ function resetearTarjetas(){
     //tomar cada tarjeta y darle un texto vacio y quitar disabled
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
-        tarjeta.innerHTML = '';
+        tarjeta.innerHTML = '?';
         tarjeta.disabled = false;
     });
 }
@@ -107,8 +107,8 @@ function destapar(id) {
                 tarjeta2.style.backgroundColor = 'black';
                 tarjeta1.style.backgroundColor = 'black';
                 tarjetasDestapadas = 0;
-                tarjeta1.innerHTML = '';
-                tarjeta2.innerHTML = '';
+                tarjeta1.innerHTML = '?';
+                tarjeta2.innerHTML = '?';
                 tarjeta1.disabled = false;
                 tarjeta2.disabled = false;
             }, 1000);
@@ -124,15 +124,19 @@ function destapar(id) {
 seleccionarDificultad.addEventListener('click', () => {
     const dificultad = formDificultad.dificultad.value;
     if(dificultad == 'facil') {
+        intentos = 0;
         columnas = 4;
         filas = 3;
     } else if (dificultad == 'medio') {
+        intentos = 0;
         filas = 4;
         columnas = 5;
     } else if (dificultad == 'dificil') {
+        intentos = 0;
         filas = 6;
         columnas = 6;
     } else if(dificultad == 'personalizado') {
+        intentos = 0;
         filas = parseInt(document.getElementById('filas').value);
         columnas = parseInt(document.getElementById('columnas').value);
         if((filas * columnas) % 2 == 0) {
