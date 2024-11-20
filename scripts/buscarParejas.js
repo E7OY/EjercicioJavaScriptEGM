@@ -51,10 +51,10 @@ function iniciarJuego() {
     mostrarIntentos.innerHTML = `Numero de intentos: ${intentos}`;
     mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
 
-    resetarTarjetas();
+    resetearTarjetas();
 }
 
-function resetarTarjetas(){
+function resetearTarjetas(){
     //tomar cada tarjeta y darle un texto vacio y quitar disabled
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
