@@ -110,6 +110,36 @@ function destapar(id) {
         setTimeout(() => {
             mensajeResultado.style.display = 'none';
         }, 1000);
-    
     }
 }
+
+
+seleccionarDificultad.addEventListener('click', () => {
+    const dificultad = formDificultad.dificultad.value;
+    if(dificultad == 'facil') {
+        columnas = 4;
+        filas = 3;
+    } else if (dificultad == 'medio') {
+        filas = 4;
+        columnas = 5;
+    } else if (dificultad == 'dificil') {
+        filas = 6;
+        columnas = 6;
+    } else if(dificultad == 'personalizado') {
+        filas = parseInt(document.getElementById('filas').value);
+        columnas = parseInt(document.getElementById('columnas').value);
+        if((filas * columnas) % 2 == 0) {
+            mensajeError.style.display = 'block';
+            return;
+        } else {
+            mensajeError.style.display = 'none';
+        }
+    }
+
+    generarTablero();
+    iniciarJuego();
+})
+
+
+
+
