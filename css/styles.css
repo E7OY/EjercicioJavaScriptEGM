@@ -35,6 +35,7 @@ section {
 .informacion, .dificultad {
     align-content: center;
     font-size: 10px;
+    background: white;
 }
 
 #form_dificultad {
@@ -73,6 +74,10 @@ section {
         border: 2px solid dashed white;
     }
 }
+.juego {
+    display: flex;
+    background: white
+  }
 
 #mensaje_resultado {
     color: white;
@@ -81,7 +86,7 @@ section {
     width: 250px;
     align-content: center;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     padding: 0px 25px;
     font-size: 15px;
     font-weight: bold;

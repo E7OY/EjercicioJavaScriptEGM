@@ -3,11 +3,9 @@ let mostrarAciertos = document.getElementById('aciertos');
 let tablero = document.getElementById('tablero');
 let mensajeResultado = document.getElementById('mensaje_resultado');
 let formDificultad = document.getElementById('form_dificultad');
-let personalizadoBoton = document.getElementById('personalizado');
 let seleccionarDificultad = document.getElementById('seleccionar_dificultad');
 let mensajeError = document.getElementById('mensaje_error');
-
-
+ 
 let filas = 3;
 let columnas = 4;
 let intentos = 0;
@@ -90,8 +88,10 @@ function destapar(id) {
             mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
             mensajeResultado.innerHTML = `Los números destapados son iguales.`;
             mensajeResultado.style.display = 'block';
-
-            //si son iguales y ya no quedan mas parejas por destapar
+            mensajeResultado.style.color = '#7ED4AD';
+            tarjeta1.style.backgroundColor = '#7ED4AD';
+            tarjeta2.style.backgroundColor = '#7ED4AD';
+              //si son iguales y ya no quedan mas parejas por destapar
             if(aciertos == (numeros.length/2)) {
                 mostrarAciertos.innerHTML = `Parejas restantes: 0.`;
                 mostrarIntentos.innerHTML = `Juego completado en ${intentos} intentos.`;
@@ -100,7 +100,12 @@ function destapar(id) {
         } else {
             mensajeResultado.innerHTML = `Los números destapados son distintos.`;
             mensajeResultado.style.display = 'block';
+            mensajeResultado.style.color = '#F95454';
+            tarjeta2.style.backgroundColor = '#F95454';
+            tarjeta1.style.backgroundColor = '#F95454';
             setTimeout(() =>{
+                tarjeta2.style.backgroundColor = 'black';
+                tarjeta1.style.backgroundColor = 'black';
                 tarjetasDestapadas = 0;
                 tarjeta1.innerHTML = '';
                 tarjeta2.innerHTML = '';
@@ -111,7 +116,7 @@ function destapar(id) {
         //el mensaje de resultado desaparece al segundo
         setTimeout(() => {
             mensajeResultado.style.display = 'none';
-        }, 1000);
+         }, 1000);
     }
 }
 
@@ -131,10 +136,14 @@ seleccionarDificultad.addEventListener('click', () => {
         filas = parseInt(document.getElementById('filas').value);
         columnas = parseInt(document.getElementById('columnas').value);
         if((filas * columnas) % 2 == 0) {
-            mensajeError.style.display = 'block';
-            return;
-        } else {
             mensajeError.style.display = 'none';
+        } else {
+                mensajeError.style.display = 'block';
+                mensajeError.innerHTML = 'El número de casillas debe ser par.';
+                setTimeout(() => {
+                    mensajeError.style.display = 'none';
+                 }, 5000);
+             return;
         }
     }
 

@@ -34,21 +34,21 @@
                 <label for="dificil">
                     <input type="radio" id="dificil" name="dificultad" value="dificil">Dificil
                 </label>
-                <label for="personalizado">
-                    <input type="radio" id="personalizado" name="dificultad" value="personalizado">Personalizado
+                <label for="casillasPersonalizado">
+                    <input type="radio" id="casillasPersonalizado" name="dificultad" value="personalizado">Personalizado
                 </label>
 
                 <div id="personalizado" style="display: none;">
                     <label for="filas">
-                        Filas: <input type="number" id="filas" min="1">
+                        Filas: <input type="number" id="filas" min="1" max="50">
                     </label>
                     <label for="columnas">
-                        Columnas: <input type="number" id="columnas" min="1">
+                        Columnas: <input type="number" id="columnas" min="1" max="50">
                     </label>
                 </div>
                 <button type="button" id="seleccionar_dificultad">Seleccionar dificultad</button>
             </form>
-            <div id="mensaje_error" style="display: none; color: red; margin-top: 20px;">El número de casillas debe ser par.</div>
+            <div id="mensaje_error" style="color: #F95454; margin-top: 20px;"></div>
         </section>
     </main>
     <script src="scripts/buscarParejas.js"></script>
