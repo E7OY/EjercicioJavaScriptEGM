@@ -8,7 +8,6 @@ let seleccionarDificultad = document.getElementById('seleccionar_dificultad');
 let mensajeError = document.getElementById('mensaje_error');
 
 
-const parejasRestantes = 0;
 let filas = 3;
 let columnas = 4;
 let intentos = 0;
@@ -18,6 +17,7 @@ let primerNumeroDestapado = null;
 let tarjeta2 = null;
 let segundoNumeroDestapado = null;
 let aciertos = 0;
+let numeros = [];
 
 function generarTablero() {
     tablero.innerHTML = '';
@@ -46,7 +46,7 @@ function iniciarJuego() {
     }
     numeros = numeros.sort(() => Math.random() - 0.5);
 
-    parejasRestantes = numeros.length/2;
+    const parejasRestantes = numeros.length/2;
 
     mostrarIntentos.innerHTML = `Numero de intentos: ${intentos}`;
     mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
@@ -86,9 +86,10 @@ function destapar(id) {
         if(primerNumeroDestapado == segundoNumeroDestapado) {
             tarjetasDestapadas = 0;
             aciertos++;
-            parejasRestantes = (numeros.length / 2) - aciertos;
+            const parejasRestantes = (numeros.length / 2) - aciertos;
             mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
             mensajeResultado.innerHTML = `Los números destapados son iguales.`;
+            mensajeResultado.style.display = 'block';
 
             //si son iguales y ya no quedan mas parejas por destapar
             if(aciertos == (numeros.length/2)) {
@@ -138,8 +139,22 @@ seleccionarDificultad.addEventListener('click', () => {
 
     generarTablero();
     iniciarJuego();
-})
+});
+
+//mostrar campos personalizados
+formDificultad.dificultad.forEach(radio => {
+    radio.addEventListener('change', () => {
+        if(radio.value === 'personalizado') {
+            personalizadoBoton.style.display = 'block';
+        } else {
+            personalizadoBoton.style.display = 'none';
+        }
+    });
+});
 
 
+
+generarTablero();
+iniciarJuego();
 
 
