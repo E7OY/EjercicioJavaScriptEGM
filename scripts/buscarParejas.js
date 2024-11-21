@@ -17,6 +17,7 @@ let segundoNumeroDestapado = null;
 let aciertos = 0;
 let numeros = [];
 
+
 function generarTablero() {
     tablero.innerHTML = '';
     //creamos las filas dependiento del valor de variable filas
@@ -95,6 +96,11 @@ function destapar(id) {
             if(aciertos == (numeros.length/2)) {
                 mostrarAciertos.innerHTML = `Parejas restantes: 0.`;
                 mostrarIntentos.innerHTML = `Juego completado en ${intentos} intentos.`;
+                confetti({
+                    particleCount: 300,
+                    spread: 200,
+                    origin: { y: 0.8 }
+                });
             }
             //comprobaciones si los numeros destapados son distintos:
         } else {
