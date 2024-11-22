@@ -129,19 +129,24 @@ function destapar(id) {
 
 seleccionarDificultad.addEventListener('click', () => {
     const dificultad = formDificultad.dificultad.value;
+    parejasRestantes =  (numeros.length / 2) - aciertos;
     if(dificultad == 'facil') {
+        aciertos = 0;
         intentos = 0;
         columnas = 4;
         filas = 3;
     } else if (dificultad == 'medio') {
+        aciertos = 0;
         intentos = 0;
         filas = 4;
         columnas = 5;
     } else if (dificultad == 'dificil') {
+        aciertos = 0;
         intentos = 0;
         filas = 6;
         columnas = 6;
     } else if(dificultad == 'personalizado') {
+        aciertos = 0;
         intentos = 0;
         filas = parseInt(document.getElementById('filas').value);
         columnas = parseInt(document.getElementById('columnas').value);
