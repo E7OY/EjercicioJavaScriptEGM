@@ -57,7 +57,7 @@ function resetearTarjetas(){
     //tomar cada tarjeta y darle un texto vacio y quitar disabled
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
-        tarjeta.innerHTML = '?';
+        tarjeta.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
         tarjeta.disabled = false;
     });
 }
@@ -113,8 +113,8 @@ function destapar(id) {
                 tarjeta2.style.backgroundColor = 'black';
                 tarjeta1.style.backgroundColor = 'black';
                 tarjetasDestapadas = 0;
-                tarjeta1.innerHTML = '?';
-                tarjeta2.innerHTML = '?';
+                tarjeta1.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
+                tarjeta2.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
                 tarjeta1.disabled = false;
                 tarjeta2.disabled = false;
             }, 1000);
