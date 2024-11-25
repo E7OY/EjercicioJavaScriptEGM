@@ -20,10 +20,8 @@ let numeros = [];
 
 function generarTablero() {
     tablero.innerHTML = '';
-    //creamos las filas dependiento del valor de variable filas
     for(let i = 0; i<filas; i++){
         let fila = document.createElement('tr');
-        //creamos columnas
         for(let j = 0; j<columnas; j++) {
             let tarjeta = document.createElement('td');
             let boton = document.createElement('button');
@@ -54,7 +52,6 @@ function iniciarJuego() {
 }
 
 function resetearTarjetas(){
-    //tomar cada tarjeta y darle un texto vacio y quitar disabled
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
         tarjeta.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
@@ -65,7 +62,6 @@ function resetearTarjetas(){
 function destapar(id) {
     tarjetasDestapadas++;
 
-    //si e usuario destapa una tarjeta
     if(tarjetasDestapadas == 1){
         tarjeta1 = document.getElementById(id);
         primerNumeroDestapado = numeros[id];
@@ -77,11 +73,9 @@ function destapar(id) {
         segundoNumeroDestapado = numeros[id];
         tarjeta2.innerHTML = segundoNumeroDestapado;
         tarjeta2.disabled = true;
-        //aumentamos intentos cuando destape dos y los escribimos
         intentos++;
         mostrarIntentos.innerHTML = `Intentos: ${intentos}`;
 
-        //comprobaciones si los numeros son iguales:
         if(primerNumeroDestapado == segundoNumeroDestapado) {
             tarjetasDestapadas = 0;
             aciertos++;
@@ -92,7 +86,6 @@ function destapar(id) {
             mensajeResultado.style.color = '#7ED4AD';
             tarjeta1.style.backgroundColor = '#7ED4AD';
             tarjeta2.style.backgroundColor = '#7ED4AD';
-              //si son iguales y ya no quedan mas parejas por destapar
             if(aciertos == (numeros.length/2)) {
                 mostrarAciertos.innerHTML = `Parejas restantes: 0.`;
                 mostrarIntentos.innerHTML = `Juego completado en ${intentos} intentos.`;
@@ -102,7 +95,6 @@ function destapar(id) {
                     origin: { y: 0.8 }
                 });
             }
-            //comprobaciones si los numeros destapados son distintos:
         } else {
             mensajeResultado.innerHTML = `Los números destapados son distintos.`;
             mensajeResultado.style.display = 'block';
@@ -119,7 +111,6 @@ function destapar(id) {
                 tarjeta2.disabled = false;
             }, 1000);
         }
-        //el mensaje de resultado desaparece al segundo
         setTimeout(() => {
             mensajeResultado.style.display = 'none';
          }, 1000);
@@ -166,7 +157,6 @@ seleccionarDificultad.addEventListener('click', () => {
     iniciarJuego();
 });
 
-//mostrar campos personalizados
 formDificultad.dificultad.forEach(radio => {
     radio.addEventListener('change', () => {
         if(radio.value === 'personalizado') {
