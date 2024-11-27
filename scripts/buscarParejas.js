@@ -35,13 +35,21 @@ function generarTablero() {
     }
 }
 
+function mezclarNumeros(numeros) {
+    for (let i = numeros.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
+    }
+    return numeros;
+}
+
 function iniciarJuego() {
     numeros = [];
     for(let i = 1; i<=(filas * columnas) / 2; i++) {
         numeros.push(i);
         numeros.push(i);
     }
-    numeros = numeros.sort(() => Math.random() - 0.5);
+    numeros = mezclarNumeros(numeros);
 
     const parejasRestantes = numeros.length/2;
 
@@ -54,7 +62,7 @@ function iniciarJuego() {
 function resetearTarjetas(){
     let tarjetas = document.querySelectorAll('.tarjeta');
     tarjetas.forEach(tarjeta => {
-        tarjeta.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
+        tarjeta.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
         tarjeta.disabled = false;
     });
 }
@@ -105,8 +113,8 @@ function destapar(id) {
                 tarjeta2.style.backgroundColor = 'black';
                 tarjeta1.style.backgroundColor = 'black';
                 tarjetasDestapadas = 0;
-                tarjeta1.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
-                tarjeta2.innerHTML = '<img src="favicon.png" alt="imagen de tarjeta" width="100%">';
+                tarjeta1.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
+                tarjeta2.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
                 tarjeta1.disabled = false;
                 tarjeta2.disabled = false;
             }, 1000);
