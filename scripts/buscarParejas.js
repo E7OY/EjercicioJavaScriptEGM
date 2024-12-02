@@ -75,7 +75,6 @@ function destapar(id) {
         primerNumeroDestapado = numeros[id];
         tarjeta1.innerHTML = primerNumeroDestapado;
         tarjeta1.disabled = true;
-        //si destapa dos
     } else if(tarjetasDestapadas == 2) {
         tarjeta2 = document.getElementById(id);
         segundoNumeroDestapado = numeros[id];
@@ -110,8 +109,8 @@ function destapar(id) {
             tarjeta2.style.backgroundColor = '#F95454';
             tarjeta1.style.backgroundColor = '#F95454';
             setTimeout(() =>{
-                tarjeta2.style.backgroundColor = 'black';
-                tarjeta1.style.backgroundColor = 'black';
+                tarjeta2.style.backgroundColor = '#00000057';
+                tarjeta1.style.backgroundColor = '#00000057';
                 tarjetasDestapadas = 0;
                 tarjeta1.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
                 tarjeta2.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
@@ -121,7 +120,7 @@ function destapar(id) {
         }
         setTimeout(() => {
             mensajeResultado.style.display = 'none';
-         }, 1000);
+        }, 1000);
     }
 }
 
@@ -156,8 +155,8 @@ seleccionarDificultad.addEventListener('click', () => {
                 mensajeError.innerHTML = 'El número de casillas debe ser par.';
                 setTimeout(() => {
                     mensajeError.style.display = 'none';
-                 }, 5000);
-             return;
+                }, 5000);
+            return;
         }
     }
 
@@ -175,9 +174,5 @@ formDificultad.dificultad.forEach(radio => {
     });
 });
 
-
-
 generarTablero();
 iniciarJuego();
-
-
