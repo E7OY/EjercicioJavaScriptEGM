@@ -17,6 +17,7 @@ let aciertos = 0;
 let numeros = [];
 
 
+
 function generarTablero() {
     tablero.innerHTML = '';
     for(let i = 0; i<filas; i++){
@@ -81,14 +82,14 @@ function destapar(id) {
         tarjeta2.innerHTML = segundoNumeroDestapado;
         tarjeta2.disabled = true;
         intentos++;
-        mostrarIntentos.innerHTML = `Intentos: ${intentos}`;
+        mostrarIntentos.innerHTML = `Numero de intentos: ${intentos}`;
 
         if(primerNumeroDestapado == segundoNumeroDestapado) {
             tarjetasDestapadas = 0;
             aciertos++;
             const parejasRestantes = (numeros.length / 2) - aciertos;
             mostrarAciertos.innerHTML = `Parejas restantes: ${parejasRestantes}`;
-            mensajeResultado.innerHTML = `Los números destapados son iguales.`;
+            mensajeResultado.innerHTML = `Los numeros destapados son iguales.`;
             mensajeResultado.style.display = 'block';
             mensajeResultado.style.color = '#7ED4AD';
             tarjeta1.style.backgroundColor = '#7ED4AD';
@@ -133,7 +134,7 @@ seleccionarDificultad.addEventListener('click', () => {
         intentos = 0;
         columnas = 4;
         filas = 3;
-    } else if (dificultad == 'medio') {
+     } else if (dificultad == 'medio') {
         aciertos = 0;
         intentos = 0;
         filas = 4;
