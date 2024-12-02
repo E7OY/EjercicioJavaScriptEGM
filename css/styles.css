@@ -115,8 +115,12 @@ h3 {
         font-size: 12px;
         text-wrap: balance;
     }
+    body {
+        margin-top: 30px;
+    }
     h1 {
         font-size: 14px;
+        line-height: 20px;
     }
 
     main {
@@ -128,12 +132,31 @@ h3 {
     }
     .juego {
         order: 1;
+        width: 100%;
     }
     .informacion {
         order: 2;
     }
     .dificultad {
         order: 3;
+    }
+
+    
+    .casilla, .tarjeta, .casilla img, .tarjeta img {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+
+    
+    .informacion, .dificultad {
+        width: 100%;
+    }
+
+    #tablero {
+        width: 100%;
     }
  
 }

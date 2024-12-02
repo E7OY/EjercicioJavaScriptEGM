@@ -5,7 +5,6 @@ let mensajeResultado = document.getElementById('mensaje_resultado');
 let formDificultad = document.getElementById('form_dificultad');
 let seleccionarDificultad = document.getElementById('seleccionar_dificultad');
 let mensajeError = document.getElementById('mensaje_error');
- 
 let filas = 3;
 let columnas = 4;
 let intentos = 0;
