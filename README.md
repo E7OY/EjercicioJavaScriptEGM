@@ -1,4 +1,4 @@
 # EjercicioJavaScript
 Repositorio para el ejercicio de javascript de desarrollo web en entorno cliente.
 
-![FireShot Capture 025 - Buscar parejas - ](https://github.com/user-attachments/assets/bc82c4cf-7b97-4c50-bf32-add340ce3e42)
+![FireShot Capture 026 - Buscar parejas - memoramajs vercel app](https://github.com/user-attachments/assets/6bc18c4a-3b4f-4e69-b04d-820fa68c3a76)
