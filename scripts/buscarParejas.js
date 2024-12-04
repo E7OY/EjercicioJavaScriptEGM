@@ -16,6 +16,11 @@ let segundoNumeroDestapado = null;
 let aciertos = 0;
 let numeros = [];
 
+let partidasGanadas = document.getElementById('partidas_ganadas');
+
+
+let ganadas = localStorage.getItem('partidasGanadas');
+partidasGanadas.innerHTML = `Partidas ganadas: ${ganadas}`;
 
 
 function generarTablero() {
@@ -42,6 +47,7 @@ function mezclarNumeros(numeros) {
     }
     return numeros;
 }
+
 
 function iniciarJuego() {
     numeros = [];
@@ -96,12 +102,16 @@ function destapar(id) {
             if(aciertos == (numeros.length/2)) {
                 mostrarAciertos.innerHTML = `Parejas restantes: 0.`;
                 mostrarIntentos.innerHTML = `Juego completado en ${intentos} intentos.`;
+                ganadas++;
+                localStorage.setItem('partidasGanadas', ganadas);
+                partidasGanadas.innerHTML = `Partidas ganadas: ${ganadas}`;
                 confetti({
                     particleCount: 300,
                     spread: 200,
                     origin: { y: 0.8 }
                 });
             }
+            
         } else {
             mensajeResultado.innerHTML = `Los números destapados son distintos.`;
             mensajeResultado.style.display = 'block';

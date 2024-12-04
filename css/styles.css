@@ -8,6 +8,7 @@ body {
     margin-top: 100px;
 }
 
+
 h1 {
     text-align: center;
     font-size: 1.5rem;
@@ -114,6 +115,10 @@ section {
 .juego {
     display: flex;
     background: white;
+}
+
+#partidas_ganadas {
+    color: black;
 }
 
 #mensaje_resultado {
