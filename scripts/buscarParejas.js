@@ -18,10 +18,8 @@ let numeros = [];
 
 let partidasGanadas = document.getElementById('partidas_ganadas');
 
-
 let ganadas = localStorage.getItem('partidasGanadas');
 partidasGanadas.innerHTML = `Partidas ganadas: ${ganadas}`;
-
 
 function generarTablero() {
     tablero.innerHTML = '';

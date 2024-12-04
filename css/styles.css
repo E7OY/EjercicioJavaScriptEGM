@@ -14,9 +14,6 @@ h1 {
     font-size: 1.5rem;
     animation: texto 3s infinite;
 }
- 
-
-
 @keyframes texto {
     0% {
         color: #F4CD1E;  
@@ -117,8 +114,20 @@ section {
     background: white;
 }
 
+.ganadas {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-style: italic;
+    background: #000;
+  
+}
+
 #partidas_ganadas {
-    color: black;
+    background: linear-gradient(to right, #F1F0E8 40%,#F4CD1E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;  
 }
 
 #mensaje_resultado {
