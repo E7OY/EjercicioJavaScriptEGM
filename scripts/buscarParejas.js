@@ -159,37 +159,45 @@ function destapar(id) {
     }
 }
 
-document.getElementById('seleccionar_dificultad').addEventListener('click', () => {
+seleccionarDificultad.addEventListener('click', () => {
     const dificultad = formDificultad.dificultad.value;
-    if (dificultad === 'facil') {
-        filas = 3;
+    parejasRestantes =  (numeros.length / 2) - aciertos;
+    if(dificultad == 'facil') {
+        aciertos = 0;
+        intentos = 0;
         columnas = 4;
-    } else if (dificultad === 'medio') {
+        filas = 3;
+    } else if (dificultad == 'medio') {
+        aciertos = 0;
+        intentos = 0;
         filas = 4;
         columnas = 5;
-    } else if (dificultad === 'dificil') {
+    } else if (dificultad == 'dificil') {
+        aciertos = 0;
+        intentos = 0;
         filas = 6;
         columnas = 6;
-    } else if (dificultad === 'personalizado') {
+    } else if(dificultad == 'personalizado') {
+        aciertos = 0;
+        intentos = 0;
         filas = parseInt(document.getElementById('filas').value);
         columnas = parseInt(document.getElementById('columnas').value);
-        if ((filas * columnas) % 2 !== 0) {
-            mensajeError.style.display = 'block';
-            return;
-        } else {
+        if((filas * columnas) % 2 == 0) {
             mensajeError.style.display = 'none';
+        } else {
+                mensajeError.style.display = 'block';
+                mensajeError.innerHTML = 'El número de casillas debe ser par.';
+                setTimeout(() => {
+                    mensajeError.style.display = 'none';
+                 }, 5000);
+             return;
         }
     }
+
     generarTablero();
     iniciarJuego();
 });
 
-document.querySelectorAll('input[name="selector-imagenes"]').forEach((radio) => {
-    radio.addEventListener('change', (event) => {
-        imagenAlternativaActiva = event.target.value === 'alternativa';
-        resetearTarjetas();
-    });
-});
-
+ 
 generarTablero();
 iniciarJuego();
