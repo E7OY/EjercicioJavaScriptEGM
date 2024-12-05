@@ -112,11 +112,11 @@ function destapar(id) {
             mensajeResultado.innerHTML = `Los números destapados son distintos.`;
             mensajeResultado.style.display = 'block';
             mensajeResultado.style.color = '#F95454';
-            tarjeta2.style.backgroundColor = '#F95454';
             tarjeta1.style.backgroundColor = '#F95454';
+            tarjeta2.style.backgroundColor = '#F95454';
             setTimeout(() =>{
-                tarjeta2.style.backgroundColor = '#00000057';
                 tarjeta1.style.backgroundColor = '#00000057';
+                tarjeta2.style.backgroundColor = '#00000057';
                 tarjetasDestapadas = 0;
                 tarjeta1.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
                 tarjeta2.innerHTML = '<img src="img/favicon.png" alt="imagen de tarjeta" width="100%">';
@@ -134,24 +134,18 @@ function destapar(id) {
 seleccionarDificultad.addEventListener('click', () => {
     const dificultad = formDificultad.dificultad.value;
     parejasRestantes =  (numeros.length / 2) - aciertos;
+    aciertos = 0;
+    intentos = 0;
     if(dificultad == 'facil') {
-        aciertos = 0;
-        intentos = 0;
         columnas = 4;
         filas = 3;
     } else if (dificultad == 'medio') {
-        aciertos = 0;
-        intentos = 0;
         filas = 4;
         columnas = 5;
     } else if (dificultad == 'dificil') {
-        aciertos = 0;
-        intentos = 0;
         filas = 6;
         columnas = 6;
     } else if(dificultad == 'personalizado') {
-        aciertos = 0;
-        intentos = 0;
         filas = parseInt(document.getElementById('filas').value);
         columnas = parseInt(document.getElementById('columnas').value);
         if((filas * columnas) % 2 == 0) {
